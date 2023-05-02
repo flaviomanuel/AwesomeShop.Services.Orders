@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AwesomeShop.Services.Orders.Application;
+using AwesomeShop.Services.Orders.Infrastructure;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -27,7 +28,11 @@ namespace AwesomeShop.Services.Orders.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddHandlers();
+            services
+                .AddMongo()
+                .AddRepositories()
+                .AddHandlers();
+
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {

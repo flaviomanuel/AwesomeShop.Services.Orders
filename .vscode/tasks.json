@@ -32,9 +32,8 @@
             "args": [
                 "watch",
                 "run",
-                "${workspaceFolder}/AwesomeShop.Services.Orders.Api/AwesomeShop.Services.Orders.Api.csproj",
-                "/property:GenerateFullPaths=true",
-                "/consoleloggerparameters:NoSummary"
+                "--project",
+                "${workspaceFolder}/AwesomeShop.Services.Orders.Api/AwesomeShop.Services.Orders.Api.csproj"
             ],
             "problemMatcher": "$msCompile"
         }
