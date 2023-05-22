@@ -34,6 +34,7 @@ namespace AwesomeShop.Services.Orders.Api
                 .AddMongo()
                 .AddRepositories()
                 .AddHandlers()
+                .AddRedisCache()
                 .AddConsulConfig(Configuration);
 
             services.AddControllers();

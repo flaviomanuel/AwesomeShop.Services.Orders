@@ -1,5 +1,6 @@
 using System;
 using AwesomeShop.Services.Orders.Core.Repositories;
+using AwesomeShop.Services.Orders.Infrastructure.CacheStorage;
 using AwesomeShop.Services.Orders.Infrastructure.MessageBus;
 using AwesomeShop.Services.Orders.Infrastructure.Persistence;
 using AwesomeShop.Services.Orders.Infrastructure.Persistence.Repositories;
@@ -106,6 +107,16 @@ namespace AwesomeShop.Services.Orders.Infrastructure
 
 
             return app;
+        }
+
+        public static IServiceCollection AddRedisCache(this IServiceCollection services){
+            services.AddStackExchangeRedisCache(options => {
+                options.InstanceName = "OrdersCache";
+                options.Configuration = "localhost:6379";
+            });
+
+            services.AddTransient<ICacheService, CacheService>();
+            return services;
         }
     }
 }
