@@ -33,7 +33,8 @@ namespace AwesomeShop.Services.Orders.Api
                 .AddMessageBus()
                 .AddMongo()
                 .AddRepositories()
-                .AddHandlers();
+                .AddHandlers()
+                .AddConsulConfig(Configuration);
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
@@ -57,7 +58,8 @@ namespace AwesomeShop.Services.Orders.Api
 
             app.UseRouting();
 
-            app.UseAuthorization();
+            // app.UseAuthorization();
+            app.UseConsul();
 
             app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
         }
