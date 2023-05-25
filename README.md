@@ -2,12 +2,12 @@
 
 A arquitetura do AwesomeShop, sistema de e-commerce baseado na arquitetura de microsserviços, contém 6 microsserviços:
 
-- [Customers]
-- [Products]
-- [Orders]
-- [Payments]
-- [Notifications]
-- [API Gateway]
+- Customers
+- Products
+- Orders
+- Payments
+- Notifications
+- API Gateway
 
 Todos os serviços acima foram utilizados nas regras de negocios do projeto
 
